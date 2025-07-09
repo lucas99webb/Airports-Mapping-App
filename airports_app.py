@@ -25,7 +25,7 @@ def load_data():
 airports = load_data()
 
 # App UI
-st.header('Airports App')
+st.header('✈️ Airport Mapping')
 
 # Filter by airport type
 st.subheader("Filter by Airport Type")
@@ -46,7 +46,7 @@ if st.button("Show Airport Locations on Map"):
         data=map_data,
         get_position='[longitude_deg, latitude_deg]',
         get_radius=10000,
-        get_fill_color=[225, 225, 0, 180],
+        get_fill_color=[139, 0, 0, 180],
         get_line_color=[0, 0, 0],
         line_width_min_pixels=1,
         pickable=True,
@@ -66,6 +66,5 @@ if st.button("Show Airport Locations on Map"):
     }
 
     st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip=tooltip,
-    map_style='mapbox://styles/mapbox/satellite-streets-v12'
+    map_style='light'
     ))
-
